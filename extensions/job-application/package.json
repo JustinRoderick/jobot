@@ -1,0 +1,14 @@
+{
+  "name": "@moltbot/job-application",
+  "version": "2026.1.27-beta.1",
+  "type": "module",
+  "description": "MoltBot job application automation plugin - search, apply, and track job applications",
+  "dependencies": {
+    "@sinclair/typebox": "0.34.47"
+  },
+  "moltbot": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}
