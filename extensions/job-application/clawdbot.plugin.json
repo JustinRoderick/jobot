@@ -1,0 +1,93 @@
+{
+  "id": "job-application",
+  "name": "Job Application",
+  "description": "Automated job search, application, and tracking plugin for MoltBot.",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "dbPath": {
+        "type": "string",
+        "description": "Path to SQLite database for job data"
+      },
+      "resumesDir": {
+        "type": "string",
+        "description": "Directory to store resume files"
+      },
+      "scanInterval": {
+        "type": "string",
+        "description": "How often to scan for new jobs (e.g., '6h', '12h')"
+      },
+      "defaultJobBoards": {
+        "type": "array",
+        "items": { "type": "string" },
+        "description": "Job boards to search by default"
+      },
+      "preferences": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "titles": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Target job titles to search for"
+          },
+          "locations": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Preferred locations (e.g., 'Remote', 'San Francisco, CA')"
+          },
+          "salaryMin": {
+            "type": "number",
+            "description": "Minimum acceptable salary"
+          },
+          "salaryMax": {
+            "type": "number",
+            "description": "Maximum salary to consider"
+          },
+          "remoteOnly": {
+            "type": "boolean",
+            "description": "Only show remote positions"
+          },
+          "excludeCompanies": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Companies to exclude from search"
+          },
+          "keywords": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Keywords to look for in job descriptions"
+          },
+          "excludeKeywords": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Keywords to exclude from results"
+          }
+        }
+      },
+      "notifications": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "channel": {
+            "type": "string",
+            "description": "Channel to send notifications (e.g., 'imessage', 'telegram')"
+          },
+          "dailySummary": {
+            "type": "boolean",
+            "description": "Send daily summary of job search activity"
+          },
+          "newJobAlerts": {
+            "type": "boolean",
+            "description": "Alert when new matching jobs are found"
+          },
+          "emailResponseAlerts": {
+            "type": "boolean",
+            "description": "Alert when email responses are detected"
+          }
+        }
+      }
+    }
+  }
+}
